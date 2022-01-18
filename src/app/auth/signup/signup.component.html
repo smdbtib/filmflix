@@ -1,0 +1,72 @@
+<form action="" #signup="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>User name</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Placeholder"
+        name="user_name"
+        ngModel
+        required
+      />
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Placeholder"
+        name="email"
+        ngModel
+        required
+      />
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Birth date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        name="birthdate"
+        ngModel
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput name="password" ngModel required />
+      <mat-icon matSuffix class="mat-18">lock</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm Password</mat-label>
+      <input
+        type="password"
+        matInput
+        name="confirm_password"
+        ngModel
+        required
+      />
+      <mat-icon matSuffix class="mat-18">lock</mat-icon>
+    </mat-form-field>
+  </p>
+  <button
+    [disabled]="signup.invalid"
+    type="submit"
+    mat-raised-button
+    color="primary"
+  >
+    Signup
+  </button>
+</form>

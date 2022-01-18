@@ -1,0 +1,20 @@
+<!-- Declarando variável no html (DOM) -->
+<form #login="ngForm" action="" (ngSubmit)="onSubmit()">
+  <h3 class="mat-h3">Welcome!</h3>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput name="email" ngModel required />
+      <mat-icon  matSuffix class="mat-18">email</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput name="password" ngModel required />
+      <mat-icon  matSuffix class="mat-18">lock</mat-icon>
+    </mat-form-field>
+  </p>
+  <!-- Validação simples onde o botão de log in só estará habilitada se os campos estiverem preenchidos -->
+  <button type="submit" mat-raised-button color="primary" [disabled]="login.invalid">Log in</button>
+</form>
