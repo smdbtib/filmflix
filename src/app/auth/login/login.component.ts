@@ -2,6 +2,8 @@ import { AuthService } from './../../core/services/auth/auth.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,9 @@ export class LoginComponent implements OnInit {
   //***CONSTRUTOR
   constructor(
     private snackBar: MatSnackBar,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private router: Router,
+    ) { }
 
   //***METHODS
   onSubmit(){
@@ -28,9 +32,10 @@ export class LoginComponent implements OnInit {
     const password = this.formLogin.value.password as string;
 
     this.authService.login(email, password).subscribe({
-      next: (creds) =>{}, // TODO: Ir para a home quado logar
+      next: (creds) =>{}, // TODO: Ir para a home quando logar
       error: (err) => {
-        let message = '';
+        let message = 'Message error';
+        console.log(err);
         switch(err.code){
           case 'auth/invalid-email':
             message = 'Email invalid';

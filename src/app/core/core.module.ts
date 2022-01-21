@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { HeaderComponent } from './components/header/header.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

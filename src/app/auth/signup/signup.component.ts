@@ -32,9 +32,12 @@ export class SignupComponent implements OnInit {
       profile: 'assets/img/user_default.png',
     };
 
+    console.log(user);
+
     this.authService.signup(values.email, values.password, user).subscribe({
       next: (creds) => {},
       error: (err) => {
+        console.log(err);
         this.snackBar.open(err.code, 'Close', {
           duration: 5000,
           horizontalPosition: 'end',
