@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { MaterialModule } from './../shared/material/material.module';
 import { SharedModule } from './../shared/shared.module';
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
@@ -19,6 +20,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MaterialModule,
     SharedModule,
     RouterModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,
